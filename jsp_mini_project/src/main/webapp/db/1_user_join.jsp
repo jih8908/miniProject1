@@ -36,10 +36,10 @@ form input[type="password"] {
                 type="button" onclick="idCheck()" value="중복확인">
         </div>
         <div>
-            <span>패스워드 : </span> <input type="password" name="pwd">
+            <span>패스워드 : </span> <input type="password" name="password">
         </div>
         <div>
-            <span>이름 : </span> <input type="text" name="username">
+            <span>이름 : </span> <input type="text" name="name">
         </div>
         <div>
 			<span class="select_input">연락처 :</span> 
@@ -58,8 +58,8 @@ form input[type="password"] {
         </div>
         <div>
             <span>성별 : </span> <label><input type="radio" name="gender"
-                value="남자" checked>남자</label>
-            <label><input type="radio" name="gender" value="여자">여자</label>
+                value="M" checked>남자</label>
+            <label><input type="radio" name="gender" value="F">여자</label>
         </div>
         
         <div>

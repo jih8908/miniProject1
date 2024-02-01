@@ -12,7 +12,10 @@
 	String userid = request.getParameter("userid");
 	String password = request.getParameter("password");
 	String name = request.getParameter("name");
-	String phone = request.getParameter("phone");
+	String phone1 = request.getParameter("phone1");
+	String phone2 = request.getParameter("phone2");
+	String phone3 = request.getParameter("phone3");
+	String phone = phone1 + "-" + phone2 + "-" + phone3;
 	String address = request.getParameter("address");
 	String gender = request.getParameter("gender");
 	
