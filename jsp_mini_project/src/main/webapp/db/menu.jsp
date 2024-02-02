@@ -118,6 +118,8 @@ header img {
 	right: 160px;
 }
 
+
+
 </style>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -182,8 +184,12 @@ header img {
 	<section id="introduction">
 		<div class="rent_toy_list">
 			<div class="toy_img">
+			
 					<a href="#"><img src="../toy_image/돌리고올리고요리사.JPG" width="400px"
 					height="300px" border="0">돌리고올리고요리사</a> 
+					
+					
+					
 					<a href="#"><img
 					src="../toy_image/릴라코중장비장난감미니자동차.JPG" width="400px" height="300px"
 					border="0">릴라코중장비장난감자동차</a> <a href="#"><img
@@ -202,10 +208,7 @@ header img {
 		</div>
 	</section>
 
-	<section id="my-page">
-		<h2>마이페이지</h2>
-		<a href="#">Menu1</a>
-	</section>
+	
 
 	<footer>
 		<p>&copy; 2024 Toy Rental Service</p>
