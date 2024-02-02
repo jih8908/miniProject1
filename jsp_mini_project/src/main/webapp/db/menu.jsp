@@ -185,38 +185,44 @@ header img {
 		<div class="rent_toy_list">
 			<div class="toy_img">
 			
-					<a href="#"><img src="../toy_image/돌리고올리고요리사.JPG" width="400px"
-					height="300px" border="0">돌리고올리고요리사</a> 
+					<a href="menu_infoYorisa.jsp">
+    				<img src="../toy_image/돌리고올리고요리사.JPG" width="500px" height="300px" border="0">돌리고올리고요리사
+					</a>
+					
+					<a href="menu_car.jsp"><img src=../toy_image/릴라코중장비장난감미니자동차.JPG
+					 width="400px" height="300px"
+					border="0">릴라코중장비장난감자동차</a> 
 					
 					
-					
-					<a href="#"><img
-					src="../toy_image/릴라코중장비장난감미니자동차.JPG" width="400px" height="300px"
-					border="0">릴라코중장비장난감자동차</a> <a href="#"><img
+					<a href="menu_cake.jsp"><img
 					src="../toy_image/멜로드회전목마케이크.JPG" width="400px" height="300px"
 					border="0">멜로디회전목마케이크</a> 
-					<a href="#"><img
+					
+					
+					<a href="menu_car2.jsp"><img
 					src="../toy_image/뽀로로빠방스쿨버스.JPG" width="400px" height="300px"
 					border="0">뽀로로빠방스쿨버스</a> 
-					<a href="#"><img
+					
+					
+					<a href="menu_5.jsp"><img
 					src="../toy_image/크롱멜로디양치놀이.JPG" width="400px" height="300px"
 					border="0">크롱멜로디양치놀이</a> 
-					<a href="#"><img
+					
+					
+					<a href="menu_6.jsp"><img
 					src="../toy_image/뽀로로한글코딩패드.JPG" width="400px" height="300px"
 					border="0">뽀로로한글코딩패드</a>
 			</div>
 		</div>
 	</section>
 
-	
-
 	<footer>
 		<p>&copy; 2024 Toy Rental Service</p>
 	</footer>
 
-	<script src="script.js"></script>
+	
 	<script>
-        document.addEventListener("DOMContentLoaded", function () {
+/*         document.addEventListener("DOMContentLoaded", function () {
             // 목차 클릭 시 해당 섹션으로 스크롤되는 동작 추가
             document.querySelectorAll('header a').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
@@ -231,7 +237,21 @@ header img {
                     });
                 });
             });
-        });
+        });*/
+        
+      /*   function submitForm() {
+            // info.jsp 파일의 경로를 확인하고 필요에 따라 수정
+            const infoPageURL = 'info.jsp';
+
+            // 폼을 생성하고, 해당 폼을 서버로 전송
+            const form = document.createElement('form');
+            form.method = 'post';
+            form.action = infoPageURL;
+
+            // 폼을 현재 페이지에 추가하고, 폼을 제출
+            document.body.appendChild(form);
+            form.submit();
+        } */
     </script>
 </body>
 

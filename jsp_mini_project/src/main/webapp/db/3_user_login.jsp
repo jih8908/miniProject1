@@ -17,13 +17,17 @@ body {
 	background-image: url('../toy_image/image_16720.png');
 }
 
-
+form input[type="text"],
+form input[type="password"] {
+    width: 200px; /* 원하는 너비로 조정 */
+    padding: 5px;
+}
 </style>
 </head>
 <body>
 	<%
 	if (request.isRequestedSessionIdValid()) {
-		out.println("세션있다");
+		/* out.println("세션있다"); */
 		session.removeAttribute("userid");
 		session.removeAttribute("username");
 		session.removeAttribute("status");
@@ -32,9 +36,9 @@ body {
 		session.invalidate();
 		//세션 한번에 지우기
 
-	} else {
+	} /* else {
 		out.println("세션없다");
-	}
+	} */
 	//out.println로 session 있는지 확인
 	%>
 	<form action="4_user_login_view.jsp" method="post">
