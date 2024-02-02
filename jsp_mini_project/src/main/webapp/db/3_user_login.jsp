@@ -4,29 +4,42 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>로그인</title>
+<style>
+@import
+	url('https://fonts.googleapis.com/css2?family=Single+Day&display=swap')
+	;
+
+body {
+	margin: 0;
+	font-family: 'Single Day', sans-serif;
+	font-size: 25px;
+	background-image: url('../toy_image/image_16720.png');
+}
+
+
+</style>
 </head>
 <body>
 	<%
-		if(request.isRequestedSessionIdValid()){
-			out.println("세션있다");
-			session.removeAttribute("userid");
-			session.removeAttribute("username");
-			session.removeAttribute("status");
-			//세션 하나씩 지우기
-			
-			session.invalidate();
-			//세션 한번에 지우기
-			
-		} else {
-			out.println("세션없다");
-		}
-		//out.println로 session 있는지 확인
-		
+	if (request.isRequestedSessionIdValid()) {
+		out.println("세션있다");
+		session.removeAttribute("userid");
+		session.removeAttribute("username");
+		session.removeAttribute("status");
+		//세션 하나씩 지우기
+
+		session.invalidate();
+		//세션 한번에 지우기
+
+	} else {
+		out.println("세션없다");
+	}
+	//out.println로 session 있는지 확인
 	%>
-	<form action="4_user_login_view.jsp">
+	<form action="4_user_login_view.jsp" method="post">
 		<div>
-			아이디 : <input type="text" name="id">
+			아이디 : <input type="text" name="userid">
 		</div>
 		<div>
 			패스워드 : <input type="password" name="pwd">
@@ -38,4 +51,5 @@
 </body>
 </html>
 <script>
+	document.body.style.backgroundImage = "url('../toy_image/image_16720.png')";
 </script>

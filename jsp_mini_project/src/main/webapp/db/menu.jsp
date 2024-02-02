@@ -5,27 +5,33 @@
 
 <head>
 <style>
+@import
+	url('https://fonts.googleapis.com/css2?family=Single+Day&display=swap')
+	;
+
 body {
-	
+	margin: 0;
+	font-family: 'Single Day', sans-serif;
 }
 
+
 header {
-    background-image: url('../toy_image/image_16720.png');
-    width : 100%;
-    height : 300px;
-    background-color: #333;
-    color: white;
-    text-align: center;
-    background-size: cover;
-    background-position: center;
-    padding: 1em;
+	background-image: url('../toy_image/image_16720.png');
+	width: 100%;
+	height: 300px;
+	background-color: #333;
+	color: white;
+	text-align: center;
+	background-size: cover;
+	background-position: center;
+	padding: 1em;
 }
 
 footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 1em;
+	background-color: #333;
+	color: white;
+	text-align: center;
+	padding: 1em;
 }
 
 #toy-list {
@@ -60,46 +66,136 @@ header a {
 	margin: 0 30px;
 }
 
-header{
-	color : #000;
+header {
+	color: #000;
 }
+
 header img {
 	width: 200px;
 	height: 100px;
+}
+.menu {
+	background-color: #f9f9f9;
+	width: 350px;
+	padding: 10px;
+	box-shadow: 1px 3px 8px 3px #e6e5e5;
+	cursor: pointer;
+	display: none;
+	position: absolute;
+	top: 50px; /* 원하는 위치로 조정 */
+	right: 0; /* 원하는 위치로 조정 */
+	font-size: 30px;
+}
+
+.menu a:hover {
+	background-color: #ccc;
+}
+
+.menu a {
+	display: block;
+	padding: 10px;
+}
+
+.action {
+	display: inline-block;
+	position: relative; /* 부모 요소에 대해 상대 위치 설정 */
+	font-size: 50px;
+}
+
+.action:hover .menu {
+	display: block;
+}
+
+.logOut {
+	position: absolute;
+	top: 10px;
+	right: 80px;
+}
+
+.myPage {
+	position: absolute;
+	top: 10px;
+	right: 160px;
 }
 
 </style>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="styles.css">
-<title>장난감 대여 홈페이지1</title>
+<title>메뉴 홈페이지</title>
 </head>
-
 <body>
+	<%@ include file="dbconn.jsp"%>
+	<%
+	String userid = request.getParameter("userid");
+	String sql = "SELECT * FROM YU_USER " + "WHERE USERID = '" + userid + "'";	
+	ResultSet rs = stmt.executeQuery(sql);//리턴값 받을때 사용, SELECT 일때만 사용
+	rs.next();
+	
+	%>
+	
 	<header>
-	<div><form name="login" action="3_user_login.jsp"><input type="submit" value="로그인"></form></div>
-	<div><form name="join" action="1_user_join.jsp"><input type="submit" value="회원가입"></form></div>
+		<div class = "logOut">
+			<form name="logOut" action="main.jsp">
+				<input type="submit" value="로그아웃">
+			</form>
+		</div>
+		<div class = "myPage">
+			<form name="myPage" action="3_user_login.jsp">
+				<input type="submit" value="마이페이지">
+			</form>
+		</div>
 		<h1>
-			<img src="../toy_image/top_logo.png" alt="도담도담이미지"> 
-			<a href="#introduction">소개</a> | <a href="#rental-items">대여용품</a> | <a href="#my-page">이용방법</a>| <a href="#my-page">마이페이지</a>
+			<img src="../toy_image/top_logo.png" alt="도담도담이미지">
+			<div class="action">
+				<a href="#introduction">소개</a>
+				<div class="menu">
+					<a>장난감월드 연혁</a> <a>장난감 현황</a>
+				</div>
+			</div>
+			|
+			<div class="action">
+				<a href="#rental-items">대여용품</a>
+				<div class="menu">
+					<a>12개월 이상</a><a>24개월 이상</a> <a>36개월 이상</a>
+				</div>
+			</div>
+			|
+			<div class="action">
+				<a href="#my-page">이용방법</a>
+				<div class="menu">
+					<a>이용 안내</a>
+				</div>
+			</div>
+			|
+			<div class="action">
+				<a href="#my-page">소식안내</a>
+				<div class="menu">
+					<a>공지사항</a>
+					<a>이달의 장난감</a>
+				</div>
+			</div>
+
 		</h1>
 	</header>
 
 	<section id="introduction">
 		<div class="rent_toy_list">
 			<div class="toy_img">
-				<a href="#"><img src="../toy_image/돌리고올리고요리사.JPG" width="400px" height="300px" border="0">돌리고올리고요리사</a> 
-				<a href="#"><img src="../toy_image/릴라코중장비장난감미니자동차.JPG" width="400px" height="300px" border="0">릴라코중장비장난감자동차</a> 
-				<a href="#"><img
+					<a href="#"><img src="../toy_image/돌리고올리고요리사.JPG" width="400px"
+					height="300px" border="0">돌리고올리고요리사</a> 
+					<a href="#"><img
+					src="../toy_image/릴라코중장비장난감미니자동차.JPG" width="400px" height="300px"
+					border="0">릴라코중장비장난감자동차</a> <a href="#"><img
 					src="../toy_image/멜로드회전목마케이크.JPG" width="400px" height="300px"
 					border="0">멜로디회전목마케이크</a> 
-				<a href="#"><img
+					<a href="#"><img
 					src="../toy_image/뽀로로빠방스쿨버스.JPG" width="400px" height="300px"
 					border="0">뽀로로빠방스쿨버스</a> 
-				<a href="#"><img
+					<a href="#"><img
 					src="../toy_image/크롱멜로디양치놀이.JPG" width="400px" height="300px"
 					border="0">크롱멜로디양치놀이</a> 
-				<a href="#"><img
+					<a href="#"><img
 					src="../toy_image/뽀로로한글코딩패드.JPG" width="400px" height="300px"
 					border="0">뽀로로한글코딩패드</a>
 			</div>
@@ -108,7 +204,7 @@ header img {
 
 	<section id="my-page">
 		<h2>마이페이지</h2>
-		  <a href="#">Menu1</a>
+		<a href="#">Menu1</a>
 	</section>
 
 	<footer>

@@ -4,16 +4,31 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>로그인</title>
+<style>
+@import
+	url('https://fonts.googleapis.com/css2?family=Single+Day&display=swap')
+	;
+
+body {
+	margin: 0;
+	font-family: 'Single Day', sans-serif;
+	font-size: 25px;
+	background-image: url('../toy_image/image_16720.png');
+}
+
+
+</style>
+
 </head>
 <body>
 	<%@ include file="dbconn.jsp"%>
 	<%
-	String id = request.getParameter("id");
+	String userid = request.getParameter("userid");
 	String pwd = request.getParameter("pwd");
 
-	String sql = "SELECT * FROM TBL_MEMBER WHERE USERID = '" //DB 파일 이름과 대조할때 이름 동일하게 작성해야됨
-			+ id + "' AND PWD = '" //id, pwd 모두 찾는 쿼리문
+	String sql = "SELECT * FROM YU_USER WHERE USERID = '" //DB 파일 이름과 대조할때 이름 동일하게 작성해야됨
+			+ userid + "' AND PASSWORD = '" //id, pwd 모두 찾는 쿼리문
 			+ pwd + "'";
 
 	ResultSet rs = stmt.executeQuery(sql);//sql 쿼리문 execute
@@ -25,22 +40,23 @@
 			out.println("비밀번호 5번 이상 실패 관리자에게 문의하세요");
 		} else {
 			session.setAttribute("userid", rs.getString("USERID"));
-			session.setAttribute("username", rs.getString("USERNAME"));
+			session.setAttribute("name", rs.getString("NAME"));
 			session.setAttribute("status", rs.getString("STATUS"));//session 정보에 담음
 			
 			if(rs.getString("STATUS").equals("A")){
-				response.sendRedirect("user_list.jsp");//A라는 권한일땐 user_list로 이동하겠다
+				response.sendRedirect("8_user_list.jsp");//A라는 권한일땐 user_list로 이동하겠다
 			}
 			out.println("로그인 성공");
-			sql = "UPDATE TBL_MEMBER SET "
+			sql = "UPDATE YU_USER SET "
 				 	+ "CNT = 0"
-					+"WHERE USERID = '"+ id + "'"; //쿼리문 작성	
+					+"WHERE USERID = '"+ userid + "'"; //쿼리문 작성	
 		stmt.executeUpdate(sql);//쿼리문 아래 stmt 꼭 작성
 	%>
 
 	<form name="userInfo">
-		<input name="id" value="<%=id%>" hidden>
+		<input name="userid" value="<%=userid%>" hidden>
 		<!-- hidden 정보 가려줌  -->
+		<input type="submit" value="메인페이지로 가기" formaction="menu.jsp"> 
 		<input type="submit" value="게시판" formaction="board_list.jsp"> 
 		<input type="button" value="회원 정보 수정" onclick="btn('u')"> 
 		<input type="button" value="회원 정보 삭제" onclick="btn('d')">		
@@ -52,7 +68,7 @@
 	%>
 	<%
 	} else {
-	String idsql = "SELECT * FROM TBL_MEMBER WHERE USERID = '" + id + "'";
+	String idsql = "SELECT * FROM YU_USER WHERE USERID = '" + userid + "'";
 	ResultSet rsId = stmt.executeQuery(idsql);
 	if (rsId.next()) {
 		//아이디는 있는데 패스워드 다를경우
@@ -61,9 +77,9 @@
 			out.println("5번 이상 실패 관리자에게 문의하세요");
 		} else {//5회 이하 실패시
 			out.println((cnt + 1) + "번 이상 실패");
-			stmt.executeUpdate("UPDATE TBL_MEMBER SET " 
+			stmt.executeUpdate("UPDATE YU_USER SET " 
 				+ "CNT = CNT+1" 
-				+ "WHERE USERID = '" + id + "'");
+				+ "WHERE USERID = '" + userid + "'");
 		}
 	} else {
 		//아이디 없는 경우
@@ -85,10 +101,13 @@
 	function btn(txt) {
 		var userInfo = document.userInfo;
 		if (txt == "u") {
-			userInfo.action = "5_user_update.jsp";
+			var id = userInfo.userid.value;
+			userInfo.action = "5_user_update.jsp?id="+id;
+			
 		} else {
 			userInfo.action = "7_user_delete.jsp";
 		}
 		userInfo.submit();
 	}
+	
 </script>

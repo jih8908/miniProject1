@@ -66,13 +66,13 @@ header img {
 .login {
 	position: absolute;
 	top: 10px;
-	right: 30px;
+	right: 80px;
 }
 
-.join {
+.myPage {
 	position: absolute;
 	top: 10px;
-	right: 100px;
+	right: 160px;
 }
 
 .menu {
@@ -106,20 +106,26 @@ header img {
 .action:hover .menu {
 	display: block;
 }
-
 </style>
 </head>
-
 <body>
+	<%@ include file="dbconn.jsp"%>
+	<%
+	String userid = request.getParameter("userid");
+	String sql = "SELECT * FROM YU_USER " + "WHERE USERID = '" + userid + "'";
+	ResultSet rs = stmt.executeQuery(sql);//리턴값 받을때 사용, SELECT 일때만 사용
+	rs.next();//rs객체 가지고 있음
+	%>
+
 	<header>
 		<div class="login">
 			<form name="login" action="3_user_login.jsp">
 				<input type="submit" value="로그인">
 			</form>
 		</div>
-		<div class="join">
-			<form name="join" action="1_user_join.jsp">
-				<input type="submit" value="회원 가입">
+		<div class="myPage">
+			<form name="join" action="5_user_update.jsp">
+				<input type="submit" value="마이페이지">
 			</form>
 		</div>
 		<h1>
@@ -141,7 +147,7 @@ header img {
 			<div class="action">
 				<a href="#my-page">이용방법</a>
 				<div class="menu">
-					<a>이용 안내</a><a>이용하는 방법</a>
+					<a>이용 안내</a>
 				</div>
 			</div>
 			|
