@@ -10,7 +10,13 @@
 	<img src="../toy_image/요리사1.JPG" width="800px" height="800px"
 		border="0">
 	<div>
-	<input type="button" value="대여가능여부확인하기">
+	<input type="button" value="대여하기" onclick="fff()">
 	</div>
 </body>
 </html>
+<script>
+	function fff(){
+		
+	}
+
+</script>
