@@ -24,7 +24,7 @@
         }
 
         // 로그인한 사용자의 아이템 및 대여일 설정
-        String itemToRent = "중장비장난감자동차"; // 동적으로 받아오도록 수정
+        String itemToRent = "릴라코중장비장난감자동차"; // 동적으로 받아오도록 수정
 
         // 사용자 정보 조회
         String userSql = "SELECT * FROM YU_USER WHERE USERID = '" + userid + "'";

@@ -32,7 +32,7 @@
                 <th>이름</th>
                 <th>빌려간 제품</th>
                 <th>빌려간 날짜</th>
-              	<th>반납해야할 날짜</th>
+              	<th>빌려간 차례</th>
             </tr>
         </thead>
         <tbody>
@@ -48,7 +48,7 @@
                             <td><%=rs.getString("NAME")%></td>
                             <td><%=rs.getString("ITEM")%></td> 
                             <td><%=rs.getString("RENTAL_DATE")%></td>    
-                            <td><%=rs.getString("RETURN_DATE")%></td>                                                   
+                            <td><%=rs.getString("RENTALID")%></td>                                                   
                         </tr>
             <%
                     }
