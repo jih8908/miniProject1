@@ -185,7 +185,7 @@ header img {
     				<img src="../toy_image/돌리고올리고요리사.JPG" width="500px" height="300px" border="0">돌리고올리고요리사
 					</a>
 					
-					<a href="menu_car.jsp"><img src=../toy_image/릴라코중장비장난감미니자동차.JPG
+					<a href="menu_jong_car.jsp"><img src=../toy_image/릴라코중장비장난감미니자동차.JPG
 					 width="400px" height="300px"
 					border="0">릴라코중장비장난감자동차</a> 
 					
@@ -195,7 +195,7 @@ header img {
 					border="0">멜로디회전목마케이크</a> 
 					
 					
-					<a href="menu_car2.jsp"><img
+					<a href="menu_pororo_car.jsp"><img
 					src="../toy_image/뽀로로빠방스쿨버스.JPG" width="400px" height="300px"
 					border="0">뽀로로빠방스쿨버스</a> 
 					

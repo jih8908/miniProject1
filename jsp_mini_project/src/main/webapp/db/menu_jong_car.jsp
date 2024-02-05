@@ -17,14 +17,14 @@
     %>
     <script>
         alert("로그인이 필요합니다.");
-        location.href = "로그인 페이지 URL"; // 로그인 페이지 URL로 변경해주세요.
+        location.href = "3_user_login.jsp"; 
     </script>
     <%
             return; // 로그인이 필요하므로 이후 코드 실행하지 않음
         }
 
         // 로그인한 사용자의 아이템 및 대여일 설정
-        String itemToRent = "멜로디회전목마케이크"; // 동적으로 받아오도록 수정
+        String itemToRent = "중장비장난감자동차"; // 동적으로 받아오도록 수정
 
         // 사용자 정보 조회
         String userSql = "SELECT * FROM YU_USER WHERE USERID = '" + userid + "'";

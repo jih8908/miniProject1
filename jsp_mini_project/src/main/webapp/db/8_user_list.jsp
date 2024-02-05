@@ -22,7 +22,7 @@ input {
 <body>
 	<%@ include file="dbconn.jsp"%>
 	<%
-	String sql = "SELECT * FROM YU_USER";
+	String sql = "SELECT * FROM YU_USER ";
 	String keyword = request.getParameter("keyword");
 	if(keyword != null){
 		sql += " WHERE NAME LIKE '%"+ keyword + "%' OR USERID LIKE '%" + keyword + "%'";   
@@ -76,13 +76,13 @@ input {
 </html>
 <script>
 	function userUpdate(userid) {
-		location.href = "5_user_update.jsp?id=" + userid;
+		location.href = "5_user_update.jsp?userid=" + userid;
 	}
 	function userDelete(userid) {
-		location.href = "7_user_delete.jsp?id=" + userid;
+		location.href = "7_user_delete.jsp?userid=" + userid;
 	}
 	function pwdreset(userid) {
-		location.href = "user_pwd_reset.jsp?id=" + userid;
+		location.href = "user_pwd_reset.jsp?userid=" + userid;
 	}
 	
 	var user = document.user_list;
