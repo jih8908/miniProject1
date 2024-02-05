@@ -75,14 +75,14 @@ input {
 </body>
 </html>
 <script>
-	function userUpdate(userId) {
-		location.href = "5_user_update.jsp?id=" + userId;
+	function userUpdate(userid) {
+		location.href = "5_user_update.jsp?id=" + userid;
 	}
-	function userDelete(userId) {
-		location.href = "7_user_delete.jsp?id=" + userId;
+	function userDelete(userid) {
+		location.href = "7_user_delete.jsp?id=" + userid;
 	}
-	function pwdreset(userId) {
-		location.href = "user_pwd_reset.jsp?id=" + userId;
+	function pwdreset(userid) {
+		location.href = "user_pwd_reset.jsp?id=" + userid;
 	}
 	
 	var user = document.user_list;

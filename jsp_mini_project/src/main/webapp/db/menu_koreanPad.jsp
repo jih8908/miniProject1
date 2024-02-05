@@ -10,7 +10,7 @@
 	<img src="../toy_image/한글패드.JPG" width="700px" height="700px"
 		border="0">
 	<div>
-	<input type="button" value="대여가능여부확인하기">
+	<input type="button" value="대여하기">
 	</div>
 </body>
 </html>

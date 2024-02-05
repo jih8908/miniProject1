@@ -10,7 +10,7 @@
 	<img src="../toy_image/자동차2.JPG" width="600px" height="800px"
 		border="0">
 	<div>
-	<input type="button" value="대여가능여부확인하기">
+	<input type="button" value="대여하기">
 	</div>
 </body>
 </html>

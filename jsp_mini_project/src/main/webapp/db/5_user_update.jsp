@@ -24,13 +24,13 @@ body {
 	<%@ include file="dbconn.jsp"%>
 	<%
 	String userid = request.getParameter("userid");
-	String sql = "SELECT * FROM YU_USER " + "WHERE USERID = '" + userid + "'";	
+	String sql = "SELECT * FROM YU_USER " + " WHERE USERID = '" + userid + "'";	
 	ResultSet rs = stmt.executeQuery(sql);//리턴값 받을때 사용, SELECT 일때만 사용
 	rs.next();//rs객체 가지고 있음	
 	%>
 	<h3>정보수정</h3>
 	<form action="6_user_update_result.jsp">
-	<input name="id" value="<%= rs.getString("USERID")%>" hidden>
+	<input name="userid" value="<%= rs.getString("userid")%>" hidden>
 		<div>
 			아이디 : <input type="text" value="<%= rs.getString("userid")%>" disabled>
 		</div>

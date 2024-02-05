@@ -117,9 +117,6 @@ header img {
 	top: 10px;
 	right: 160px;
 }
-
-
-
 </style>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -132,8 +129,7 @@ header img {
 	String userid = request.getParameter("userid");
 	String sql = "SELECT * FROM YU_USER " + "WHERE USERID = '" + userid + "'";	
 	ResultSet rs = stmt.executeQuery(sql);//리턴값 받을때 사용, SELECT 일때만 사용
-	rs.next();
-	
+	rs.next();	
 	%>
 	
 	<header>
@@ -174,7 +170,7 @@ header img {
 				<a href="#my-page">소식안내</a>
 				<div class="menu">
 					<a>공지사항</a>
-					<a>이달의 장난감</a>
+					<a>게시판</a>
 				</div>
 			</div>
 
@@ -204,12 +200,12 @@ header img {
 					border="0">뽀로로빠방스쿨버스</a> 
 					
 					
-					<a href="menu_5.jsp"><img
+					<a href="menu_crong.jsp"><img
 					src="../toy_image/크롱멜로디양치놀이.JPG" width="400px" height="300px"
 					border="0">크롱멜로디양치놀이</a> 
 					
 					
-					<a href="menu_6.jsp"><img
+					<a href="menu_koreanPad.jsp"><img
 					src="../toy_image/뽀로로한글코딩패드.JPG" width="400px" height="300px"
 					border="0">뽀로로한글코딩패드</a>
 			</div>
