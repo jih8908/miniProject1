@@ -32,7 +32,7 @@
                 <th>이름</th>
                 <th>빌려간 제품</th>
                 <th>빌려간 날짜</th>
-              	<th>빌려간 차례</th>
+              	<th>빌려간 순번</th>
             </tr>
         </thead>
         <tbody>

@@ -29,7 +29,7 @@ form input[type="password"] {
 	if (request.isRequestedSessionIdValid()) {
 		/* out.println("세션있다"); */
 		session.removeAttribute("userid");
-		session.removeAttribute("username");
+		session.removeAttribute("name");
 		session.removeAttribute("status");
 		//세션 하나씩 지우기
 
@@ -46,7 +46,7 @@ form input[type="password"] {
 			아이디 : <input type="text" name="userid">
 		</div>
 		<div>
-			패스워드 : <input type="password" name="pwd">
+			패스워드 : <input type="password" name="password">
 		</div>
 		<div>
 			<input type="submit" value="로그인">

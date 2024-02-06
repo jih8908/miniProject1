@@ -8,8 +8,8 @@
 <body>
     <%@ include file="dbconn.jsp" %>
     <%
-        String userid = request.getParameter("USERID");
-        String sql = "SELECT * FROM YU_USER " + "WHERE USERID = '" + userid + "'";
+        String userid = request.getParameter("userid");
+        String sql = "SELECT * FROM YU_USER WHERE USERID = '" + userid + "'";
         
         ResultSet rs = stmt.executeQuery(sql);
         
@@ -19,21 +19,27 @@
             <form action="6_user_update_result.jsp">
                 <input name="id" value="<%= rs.getString("userid")%>" hidden>
                 <div>
-                    아이디 : <input type="text" value="<%= rs.getString("userid")%>" disabled>
+                    아이디 : <input type="text" name="userid" value="<%= rs.getString("userid")%>" readonly>
                 </div>
                 <div>
-                    패스워드 : <input type="password" name="pwd">
+                    패스워드 : <input type="password" name="password">
                 </div>
                 <div>
-                    이름 : <input type="text" name="name" value="<%= rs.getString("Name")%>">
+                    핸드폰 번호 : <input type="text" name="phone" value="<%= rs.getString("phone")%>">
+                </div>
+                <div>
+                    주소 : <input type="text" name="address" value="<%= rs.getString("address")%>">
+                </div>
+                <div>
+                    이름 : <input type="text" name="name" value="<%= rs.getString("name")%>">
                 </div>        
                 <div>성 별 :
                     <% if (rs.getString("gender").equals("M")) { %>
-                        <label><input type="radio" name="gender" value="남성" checked>남성</label>
-                        <label><input type="radio" name="gender" value="여성">여성</label>
+                        <label><input type="radio" name="gender" value="M" checked>M</label>
+                        <label><input type="radio" name="gender" value="F">F</label>
                     <% } else { %>
-                        <label><input type="radio" name="gender" value="남성">남성</label>
-                        <label><input type="radio" name="gender" value="여성" checked>여성</label>
+                        <label><input type="radio" name="gender" value="M">M</label>
+                        <label><input type="radio" name="gender" value="F" checked>F</label>
                     <% } %>        
                 </div>
                 <div>

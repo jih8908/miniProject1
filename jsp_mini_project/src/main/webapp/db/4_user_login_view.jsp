@@ -39,9 +39,9 @@
     <%@ include file="dbconn.jsp"%>
     <%
         String userid = request.getParameter("userid");
-        String pwd = request.getParameter("pwd");
+        String password = request.getParameter("password");
 
-        String sql = "SELECT * FROM YU_USER WHERE USERID = '" + userid + "' AND PASSWORD = '" + pwd + "'";
+        String sql = "SELECT * FROM YU_USER WHERE USERID = '" + userid + "' AND PASSWORD = '" + password + "'";
 
         ResultSet rs = stmt.executeQuery(sql);
 
@@ -55,14 +55,14 @@
 
                 if (rs.getString("STATUS").equals("A")) {
     %>	
-    	<%
-    	%>
+    	
                     <form name="rentalUserInfo">
                         <p>관리자로 로그인되었습니다.</p>
+                        <input type="text" value="<%= userid %>" name = "userid" hidden>
                         <input type="button" value="대여 유저 목록" onclick="goToRentalUserList()">
                         <input type="button" value="가입자 리스트" onclick="goToUserList()">
                         <input type="button" value="메뉴 페이지로 가기" onclick="goToMenuPage()">
-                        <input type="button" value="정보 수정" onclick="goToEditProfile()">
+                        <input type="button" value="정보 수정" onclick="goToEditProfile('<%=userid%>')">
 	
                     </form>
                     <script>
@@ -89,15 +89,15 @@
                     <form name="userMenu">
                         <p>로그인 성공</p>
                         <input type="button" value="메뉴 페이지로 가기" onclick="goToMenuPage()">
-                        <input type="button" value="정보 수정" onclick="goToEditProfile()">
+                        <input type="button" value="정보 수정" onclick="goToEditProfile('<%=userid%>')">
                     </form>
                     <script>
                         function goToMenuPage() {
                             location.href = "menu.jsp";
                         }
 
-                        function goToEditProfile() {
-                            location.href = "5_user_update.jsp";
+                        function goToEditProfile(userid) {
+                            location.href = "5_user_update.jsp?userid="+userid;
                         }
                     </script>
                 <%

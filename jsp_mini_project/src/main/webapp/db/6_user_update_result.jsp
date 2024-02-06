@@ -23,16 +23,16 @@ body {
 <body>
 	<%@ include file="dbconn.jsp"%>
 	<%
-	String userId = request.getParameter("USERID");
-	String pwd = request.getParameter("PASSWORD");
-	String name = request.getParameter("NAME"); 
-	String gender = request.getParameter("GENDER"); //객체 가져옴
-	String phone = request.getParameter("PHONE");
-	String address = request.getParameter("ADDRESS");
+	String userid = request.getParameter("userid");
+	String pwd = request.getParameter("password");
+	String name = request.getParameter("name"); 
+	String gender = request.getParameter("gender"); //객체 가져옴
+	String phone = request.getParameter("phone");
+	String address = request.getParameter("address");
 	
 	String pwdStr = ""; //객체 생성
 	if(pwd != null && !pwd.equals("")){ //패스워드가 빈값이고 "" 내용이 아니면 
-		pwdStr = "PWD = '" + pwd + "',"; //
+		pwdStr = "PASSWORD = '" + pwd + "',"; //
 	}
 	
 	String sql = "UPDATE YU_USER SET " //T "=> 띄어쓰기 안하면 하나의 테이블로 인식
@@ -42,13 +42,12 @@ body {
 				+ "GENDER = '" + gender + "',"
 				+ "PHONE = '" + phone + "',"
 				+ "ADDRESS = '" + address + "' "
-				+ "WHERE USERID = '" + userId + "'";	
-				
+				+ "WHERE USERID = '" + userid + "'";	
 	
   	stmt.executeUpdate(sql);//db에 업데이트
 	out.println("수정되었습니다"); 
 
-	// out.println(sql);
+	//out.println(sql);
 	%>
 		
 </body>
