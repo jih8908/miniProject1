@@ -148,14 +148,15 @@ header img {
 			<div class="action">
 				<a href="#introduction">소개</a>
 				<div class="menu">
-					<a>장난감월드 연혁</a> <a>장난감 현황</a>
+					<a href="https://www.dodamtoys.or.kr/main/main.php?categoryid=02&menuid=04&groupid=00">장난감월드 연혁</a>
+					<a href="https://www.dodamtoys.or.kr/main/main.php?categoryid=02&menuid=01&groupid=00">장난감 월드 소개</a>
 				</div>
 			</div>
 			|
 			<div class="action">
 				<a href="#rental-items">대여용품</a>
 				<div class="menu">
-					<a>12개월 이상</a><a>24개월 이상</a> <a>36개월 이상</a>
+					<a>12개월 이상</a><a>24개월 이상</a><a>36개월 이상</a>
 				</div>
 			</div>
 			|

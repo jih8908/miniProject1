@@ -58,11 +58,10 @@
     	
                     <form name="rentalUserInfo">
                         <p>관리자로 로그인되었습니다.</p>
-                        <input type="text" value="<%= userid %>" name = "userid" hidden>
                         <input type="button" value="대여 유저 목록" onclick="goToRentalUserList()">
                         <input type="button" value="가입자 리스트" onclick="goToUserList()">
                         <input type="button" value="메뉴 페이지로 가기" onclick="goToMenuPage()">
-                        <input type="button" value="정보 수정" onclick="goToEditProfile('<%=userid%>')">
+                        <input type="button" value="정보 수정" onclick="goToEditProfile()">
 	
                     </form>
                     <script>
@@ -78,9 +77,9 @@
                             location.href = "menu.jsp";
                         }
 
-                        function goToEditProfile(userid) {
-                            location.href = "5_user_update.jsp?userid="+userid;
-                            
+                        function goToEditProfile() {
+                            var userid = '<%= session.getAttribute("userid") %>';
+                            location.href = "5_user_update.jsp?userid=" + userid;
                         }
                     </script>
                 <%
@@ -88,16 +87,23 @@
                 %>
                     <form name="userMenu">
                         <p>로그인 성공</p>
-                        <input type="button" value="메뉴 페이지로 가기" onclick="goToMenuPage()">
-                        <input type="button" value="정보 수정" onclick="goToEditProfile('<%=userid%>')">
+                        <input type="button" value="메뉴 페이지" onclick="goToMenuPage()">
+                        <input type="button" value="마이 페이지" onclick="goToMyPage()">
+                        <input type="button" value="정보 수정" onclick="goToEditProfile()">
                     </form>
                     <script>
                         function goToMenuPage() {
                             location.href = "menu.jsp";
                         }
+                        
+                        function goToMyPage() {
+                            var userid = '<%= session.getAttribute("userid") %>';
+                            location.href = "myPage.jsp?userid=" + userid;
+                        }
 
-                        function goToEditProfile(userid) {
-                            location.href = "5_user_update.jsp?userid="+userid;
+                        function goToEditProfile() {
+                            var userid = '<%= session.getAttribute("userid") %>';
+                            location.href = "5_user_update.jsp?userid=" + userid;
                         }
                     </script>
                 <%

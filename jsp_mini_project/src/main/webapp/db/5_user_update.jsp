@@ -35,11 +35,11 @@
                 </div>        
                 <div>성 별 :
                     <% if (rs.getString("gender").equals("M")) { %>
-                        <label><input type="radio" name="gender" value="M" checked>M</label>
-                        <label><input type="radio" name="gender" value="F">F</label>
+                        <label><input type="radio" name="gender" value="M" checked>남성</label>
+                        <label><input type="radio" name="gender" value="F">여성</label>
                     <% } else { %>
-                        <label><input type="radio" name="gender" value="M">M</label>
-                        <label><input type="radio" name="gender" value="F" checked>F</label>
+                        <label><input type="radio" name="gender" value="M">남성</label>
+                        <label><input type="radio" name="gender" value="F" checked>여성</label>
                     <% } %>        
                 </div>
                 <div>

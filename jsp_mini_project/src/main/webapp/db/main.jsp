@@ -66,13 +66,13 @@ header img {
 .login {
 	position: absolute;
 	top: 10px;
-	right: 80px;
+	right: 90px;
 }
 
-.myPage {
+.join {
 	position: absolute;
 	top: 10px;
-	right: 160px;
+	right: 150px;
 }
 
 .menu {
@@ -118,14 +118,14 @@ header img {
 	%>
 
 	<header>
+		<div class="join">
+			<form name="join" action="1_user_join.jsp">
+				<input type="submit" value="회원가입">
+			</form>
+		</div>
 		<div class="login">
 			<form name="login" action="3_user_login.jsp">
 				<input type="submit" value="로그인">
-			</form>
-		</div>
-		<div class="myPage">
-			<form name="join" action="5_user_update.jsp">
-				<input type="submit" value="마이페이지">
 			</form>
 		</div>
 		<h1>
@@ -133,7 +133,8 @@ header img {
 			<div class="action">
 				<a href="#introduction">소개</a>
 				<div class="menu">
-					<a>장난감월드 연혁</a> <a>장난감 현황</a>
+					<a href="https://www.dodamtoys.or.kr/main/main.php?categoryid=02&menuid=04&groupid=00">장난감월드 연혁</a>
+					<a href="https://www.dodamtoys.or.kr/main/main.php?categoryid=02&menuid=01&groupid=00">장난감 월드 소개</a>
 				</div>
 			</div>
 			|
@@ -147,14 +148,15 @@ header img {
 			<div class="action">
 				<a href="#my-page">이용방법</a>
 				<div class="menu">
-					<a>이용 안내</a>
+					<a href="https://www.dodamtoys.or.kr/main/main.php?categoryid=03&menuid=01&groupid=00&partid=00">이용 안내</a>
 				</div>
 			</div>
 			|
 			<div class="action">
 				<a href="#my-page">소식안내</a>
 				<div class="menu">
-					<a>공지사항</a><a>이달의 장난감</a>
+					<a href="https://www.dodamtoys.or.kr/main/main.php?categoryid=05&menuid=01&groupid=00&partid=00">공지사항</a>
+					<a href="https://www.dodamtoys.or.kr/main/main.php?categoryid=05&menuid=04&groupid=00">이달의 장난감</a>
 				</div>
 			</div>
 

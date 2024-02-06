@@ -30,15 +30,14 @@
             <tr>
                 <th>아이디</th>
                 <th>이름</th>
-                <th>빌려간 제품</th>
-                <th>빌려간 날짜</th>
-              	<th>빌려간 순번</th>
+                <th>빌려간 제품명</th>
+                <th>빌려간 횟수</th>
             </tr>
         </thead>
         <tbody>
             <%
                 try {
-                    String sql = "SELECT * FROM YU_RENTAL_HISTORY";
+                    String sql = "SELECT USERID, NAME, ITEM, COUNT(*) AS RENTAL_COUNT FROM YU_RENTAL_HISTORY GROUP BY USERID, NAME, ITEM";
                     ResultSet rs = stmt.executeQuery(sql);
 
                     while (rs.next()) {
@@ -46,9 +45,8 @@
                         <tr>
                             <td><%=rs.getString("USERID")%></td>
                             <td><%=rs.getString("NAME")%></td>
-                            <td><%=rs.getString("ITEM")%></td> 
-                            <td><%=rs.getString("RENTAL_DATE")%></td>    
-                            <td><%=rs.getString("RENTALID")%></td>                                                   
+                            <td><%=rs.getString("ITEM")%></td>
+                            <td><%=rs.getInt("RENTAL_COUNT")%></td>
                         </tr>
             <%
                     }
