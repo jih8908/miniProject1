@@ -1,0 +1,193 @@
+--------------------------------------------------------
+--  파일이 생성됨 - 화요일-2월-06-2024   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table YU_PRODUCT_NUM
+--------------------------------------------------------
+
+  CREATE TABLE "SYSTEM"."YU_PRODUCT_NUM" 
+   (	"ITEM" VARCHAR2(100 BYTE), 
+	"ITEMNO" NUMBER
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+--------------------------------------------------------
+--  DDL for Table YU_RENTAL_HISTORY
+--------------------------------------------------------
+
+  CREATE TABLE "SYSTEM"."YU_RENTAL_HISTORY" 
+   (	"RENTALID" NUMBER(*,0), 
+	"USERID" VARCHAR2(200 BYTE), 
+	"NAME" VARCHAR2(255 BYTE), 
+	"ITEM" VARCHAR2(255 BYTE), 
+	"RENTAL_DATE" DATE
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+--------------------------------------------------------
+--  DDL for Table YU_USER
+--------------------------------------------------------
+
+  CREATE TABLE "SYSTEM"."YU_USER" 
+   (	"USERID" VARCHAR2(20 BYTE), 
+	"PASSWORD" VARCHAR2(20 BYTE), 
+	"NAME" VARCHAR2(20 BYTE), 
+	"PHONE" VARCHAR2(20 BYTE), 
+	"ADDRESS" VARCHAR2(100 BYTE), 
+	"GENDER" VARCHAR2(20 BYTE), 
+	"CNT" NUMBER, 
+	"STATUS" VARCHAR2(20 BYTE) DEFAULT 'U'
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+REM INSERTING into SYSTEM.YU_PRODUCT_NUM
+SET DEFINE OFF;
+Insert into SYSTEM.YU_PRODUCT_NUM (ITEM,ITEMNO) values ('돌리고올리고요리사',2);
+Insert into SYSTEM.YU_PRODUCT_NUM (ITEM,ITEMNO) values ('릴라코중장비장난감자동차',3);
+Insert into SYSTEM.YU_PRODUCT_NUM (ITEM,ITEMNO) values ('뽀로로빠방스쿨버스',4);
+Insert into SYSTEM.YU_PRODUCT_NUM (ITEM,ITEMNO) values ('뽀로로한글코딩패드',5);
+Insert into SYSTEM.YU_PRODUCT_NUM (ITEM,ITEMNO) values ('크롱멜로디양치놀이',6);
+Insert into SYSTEM.YU_PRODUCT_NUM (ITEM,ITEMNO) values ('멜로디회전목마케이크',1);
+REM INSERTING into SYSTEM.YU_RENTAL_HISTORY
+SET DEFINE OFF;
+Insert into SYSTEM.YU_RENTAL_HISTORY (RENTALID,USERID,NAME,ITEM,RENTAL_DATE) values (9,'kim456','김철수','멜로디회전목마케이크',to_date('24/02/05','RR/MM/DD'));
+Insert into SYSTEM.YU_RENTAL_HISTORY (RENTALID,USERID,NAME,ITEM,RENTAL_DATE) values (10,'electricjellyfish16','최지연','멜로디회전목마케이크',to_date('24/02/05','RR/MM/DD'));
+Insert into SYSTEM.YU_RENTAL_HISTORY (RENTALID,USERID,NAME,ITEM,RENTAL_DATE) values (11,'kim456','김철수','멜로디회전목마케이크',to_date('24/02/05','RR/MM/DD'));
+Insert into SYSTEM.YU_RENTAL_HISTORY (RENTALID,USERID,NAME,ITEM,RENTAL_DATE) values (12,'kim456','김철수','크롱멜로디양치놀이',to_date('24/02/05','RR/MM/DD'));
+Insert into SYSTEM.YU_RENTAL_HISTORY (RENTALID,USERID,NAME,ITEM,RENTAL_DATE) values (13,'kim456','김철수','돌리고올리고요리사',to_date('24/02/05','RR/MM/DD'));
+Insert into SYSTEM.YU_RENTAL_HISTORY (RENTALID,USERID,NAME,ITEM,RENTAL_DATE) values (14,'kim456','김철수','릴라코중장비장난감자동차',to_date('24/02/05','RR/MM/DD'));
+Insert into SYSTEM.YU_RENTAL_HISTORY (RENTALID,USERID,NAME,ITEM,RENTAL_DATE) values (15,'kim456','김철수','뽀로로한글코딩패드',to_date('24/02/05','RR/MM/DD'));
+Insert into SYSTEM.YU_RENTAL_HISTORY (RENTALID,USERID,NAME,ITEM,RENTAL_DATE) values (16,'kim456','김철수','돌리고올리고요리사',to_date('24/02/05','RR/MM/DD'));
+Insert into SYSTEM.YU_RENTAL_HISTORY (RENTALID,USERID,NAME,ITEM,RENTAL_DATE) values (17,'kim456','김철수','뽀로로빠방스쿨버스',to_date('24/02/05','RR/MM/DD'));
+Insert into SYSTEM.YU_RENTAL_HISTORY (RENTALID,USERID,NAME,ITEM,RENTAL_DATE) values (18,'kim456','김철수','멜로디회전목마케이크',to_date('24/02/05','RR/MM/DD'));
+Insert into SYSTEM.YU_RENTAL_HISTORY (RENTALID,USERID,NAME,ITEM,RENTAL_DATE) values (19,'kim456','김철수','뽀로로빠방스쿨버스',to_date('24/02/05','RR/MM/DD'));
+Insert into SYSTEM.YU_RENTAL_HISTORY (RENTALID,USERID,NAME,ITEM,RENTAL_DATE) values (20,'kim456','김철수','뽀로로빠방스쿨버스',to_date('24/02/05','RR/MM/DD'));
+Insert into SYSTEM.YU_RENTAL_HISTORY (RENTALID,USERID,NAME,ITEM,RENTAL_DATE) values (21,'kim123','김미소','돌리고올리고요리사',to_date('24/02/05','RR/MM/DD'));
+Insert into SYSTEM.YU_RENTAL_HISTORY (RENTALID,USERID,NAME,ITEM,RENTAL_DATE) values (22,'kim456','김철수','돌리고올리고요리사',to_date('24/02/06','RR/MM/DD'));
+Insert into SYSTEM.YU_RENTAL_HISTORY (RENTALID,USERID,NAME,ITEM,RENTAL_DATE) values (23,'kim123','김미소','뽀로로한글코딩패드',to_date('24/02/06','RR/MM/DD'));
+Insert into SYSTEM.YU_RENTAL_HISTORY (RENTALID,USERID,NAME,ITEM,RENTAL_DATE) values (24,'whisperingpine73','박민수','릴라코중장비장난감자동차',to_date('24/02/06','RR/MM/DD'));
+Insert into SYSTEM.YU_RENTAL_HISTORY (RENTALID,USERID,NAME,ITEM,RENTAL_DATE) values (25,'mysticmango41','이승우','뽀로로빠방스쿨버스',to_date('24/02/06','RR/MM/DD'));
+Insert into SYSTEM.YU_RENTAL_HISTORY (RENTALID,USERID,NAME,ITEM,RENTAL_DATE) values (26,'kim123','김미소','돌리고올리고요리사',to_date('24/02/06','RR/MM/DD'));
+Insert into SYSTEM.YU_RENTAL_HISTORY (RENTALID,USERID,NAME,ITEM,RENTAL_DATE) values (27,'kim789','김미미','돌리고올리고요리사',to_date('24/02/06','RR/MM/DD'));
+Insert into SYSTEM.YU_RENTAL_HISTORY (RENTALID,USERID,NAME,ITEM,RENTAL_DATE) values (28,'d111','유지','뽀로로빠방스쿨버스',to_date('24/02/06','RR/MM/DD'));
+Insert into SYSTEM.YU_RENTAL_HISTORY (RENTALID,USERID,NAME,ITEM,RENTAL_DATE) values (29,'d111','유지','크롱멜로디양치놀이',to_date('24/02/06','RR/MM/DD'));
+Insert into SYSTEM.YU_RENTAL_HISTORY (RENTALID,USERID,NAME,ITEM,RENTAL_DATE) values (30,'d111','유지','돌리고올리고요리사',to_date('24/02/06','RR/MM/DD'));
+Insert into SYSTEM.YU_RENTAL_HISTORY (RENTALID,USERID,NAME,ITEM,RENTAL_DATE) values (31,'d111','유지','크롱멜로디양치놀이',to_date('24/02/06','RR/MM/DD'));
+Insert into SYSTEM.YU_RENTAL_HISTORY (RENTALID,USERID,NAME,ITEM,RENTAL_DATE) values (32,'galacticserenade63','최은주','크롱멜로디양치놀이',to_date('24/02/06','RR/MM/DD'));
+Insert into SYSTEM.YU_RENTAL_HISTORY (RENTALID,USERID,NAME,ITEM,RENTAL_DATE) values (33,'galacticserenade63','최은주','멜로디회전목마케이크',to_date('24/02/06','RR/MM/DD'));
+Insert into SYSTEM.YU_RENTAL_HISTORY (RENTALID,USERID,NAME,ITEM,RENTAL_DATE) values (34,'velvetthunder89','김은주','뽀로로빠방스쿨버스',to_date('24/02/06','RR/MM/DD'));
+Insert into SYSTEM.YU_RENTAL_HISTORY (RENTALID,USERID,NAME,ITEM,RENTAL_DATE) values (35,'velvetthunder89','김은주','릴라코중장비장난감자동차',to_date('24/02/06','RR/MM/DD'));
+Insert into SYSTEM.YU_RENTAL_HISTORY (RENTALID,USERID,NAME,ITEM,RENTAL_DATE) values (36,'velvetthunder89','김은주','돌리고올리고요리사',to_date('24/02/06','RR/MM/DD'));
+Insert into SYSTEM.YU_RENTAL_HISTORY (RENTALID,USERID,NAME,ITEM,RENTAL_DATE) values (37,'abc','유지혜','크롱멜로디양치놀이',to_date('24/02/06','RR/MM/DD'));
+Insert into SYSTEM.YU_RENTAL_HISTORY (RENTALID,USERID,NAME,ITEM,RENTAL_DATE) values (38,'abc','유지혜','뽀로로한글코딩패드',to_date('24/02/06','RR/MM/DD'));
+Insert into SYSTEM.YU_RENTAL_HISTORY (RENTALID,USERID,NAME,ITEM,RENTAL_DATE) values (39,'d111','유지','멜로디회전목마케이크',to_date('24/02/06','RR/MM/DD'));
+Insert into SYSTEM.YU_RENTAL_HISTORY (RENTALID,USERID,NAME,ITEM,RENTAL_DATE) values (40,'lunarharmony27','장재현','돌리고올리고요리사',to_date('24/02/06','RR/MM/DD'));
+Insert into SYSTEM.YU_RENTAL_HISTORY (RENTALID,USERID,NAME,ITEM,RENTAL_DATE) values (41,'lunarharmony27','장재현','크롱멜로디양치놀이',to_date('24/02/06','RR/MM/DD'));
+Insert into SYSTEM.YU_RENTAL_HISTORY (RENTALID,USERID,NAME,ITEM,RENTAL_DATE) values (42,'cosmicwombat72','고태영','돌리고올리고요리사',to_date('24/02/06','RR/MM/DD'));
+Insert into SYSTEM.YU_RENTAL_HISTORY (RENTALID,USERID,NAME,ITEM,RENTAL_DATE) values (43,'kim123','김미소','뽀로로빠방스쿨버스',to_date('24/02/06','RR/MM/DD'));
+Insert into SYSTEM.YU_RENTAL_HISTORY (RENTALID,USERID,NAME,ITEM,RENTAL_DATE) values (44,'velvetthunder89','김은주','뽀로로한글코딩패드',to_date('24/02/06','RR/MM/DD'));
+Insert into SYSTEM.YU_RENTAL_HISTORY (RENTALID,USERID,NAME,ITEM,RENTAL_DATE) values (45,'velvetthunder89','김은주','릴라코중장비장난감자동차',to_date('24/02/06','RR/MM/DD'));
+Insert into SYSTEM.YU_RENTAL_HISTORY (RENTALID,USERID,NAME,ITEM,RENTAL_DATE) values (46,'abc','유지혜','멜로디회전목마케이크',to_date('24/02/06','RR/MM/DD'));
+Insert into SYSTEM.YU_RENTAL_HISTORY (RENTALID,USERID,NAME,ITEM,RENTAL_DATE) values (47,'abc','유지혜','멜로디회전목마케이크',to_date('24/02/06','RR/MM/DD'));
+REM INSERTING into SYSTEM.YU_USER
+SET DEFINE OFF;
+Insert into SYSTEM.YU_USER (USERID,PASSWORD,NAME,PHONE,ADDRESS,GENDER,CNT,STATUS) values ('kim456','2222','김철수','010-8908-1111','서울시 서초구','M',0,'U');
+Insert into SYSTEM.YU_USER (USERID,PASSWORD,NAME,PHONE,ADDRESS,GENDER,CNT,STATUS) values ('kim123','123','김미소','010-8908-8908','서울시 강남구','F',0,'U');
+Insert into SYSTEM.YU_USER (USERID,PASSWORD,NAME,PHONE,ADDRESS,GENDER,CNT,STATUS) values ('whisperingpine73','qwerty789','박민수','010-3333-4444','인천 남동구','M         ',0,'U');
+Insert into SYSTEM.YU_USER (USERID,PASSWORD,NAME,PHONE,ADDRESS,GENDER,CNT,STATUS) values ('electricjellyfish16','abcxyz123','최지연','010-4444-5555','부산 부산진구','F         ',0,'U');
+Insert into SYSTEM.YU_USER (USERID,PASSWORD,NAME,PHONE,ADDRESS,GENDER,CNT,STATUS) values ('mysticmango41','passpasspass','이승우','010-5555-6666','대구 수성구','M         ',0,'U');
+Insert into SYSTEM.YU_USER (USERID,PASSWORD,NAME,PHONE,ADDRESS,GENDER,CNT,STATUS) values ('velvetthunder89','securePW789','김은주','010-6666-7777','광주 서구','F         ',0,'U');
+Insert into SYSTEM.YU_USER (USERID,PASSWORD,NAME,PHONE,ADDRESS,GENDER,CNT,STATUS) values ('lunarharmony27','mypassword','장재현','010-7777-8888','대전 대덕구','M         ',0,'U');
+Insert into SYSTEM.YU_USER (USERID,PASSWORD,NAME,PHONE,ADDRESS,GENDER,CNT,STATUS) values ('quantumflamingo68','userpass','고은미','010-8888-9999','울산 남구','F         ',0,'U');
+Insert into SYSTEM.YU_USER (USERID,PASSWORD,NAME,PHONE,ADDRESS,GENDER,CNT,STATUS) values ('nebulacascade14','hello123','박민석','010-9999-1111','서울 중랑구','M         ',0,'U');
+Insert into SYSTEM.YU_USER (USERID,PASSWORD,NAME,PHONE,ADDRESS,GENDER,CNT,STATUS) values ('sapphirevortex55','letmein','송지원','010-1111-2222','서울 강서구','F         ',0,'U');
+Insert into SYSTEM.YU_USER (USERID,PASSWORD,NAME,PHONE,ADDRESS,GENDER,CNT,STATUS) values ('celestialwhale82','secure789','최정호','010-2222-3333','울산 동구','M         ',null,'U');
+Insert into SYSTEM.YU_USER (USERID,PASSWORD,NAME,PHONE,ADDRESS,GENDER,CNT,STATUS) values ('enigmaticbreeze37','password789','이현우','010-2222-3333','경기도 수원시','M         ',null,'U');
+Insert into SYSTEM.YU_USER (USERID,PASSWORD,NAME,PHONE,ADDRESS,GENDER,CNT,STATUS) values ('crimsonphoenix49','securePW123','김다빈','010-3333-4444','서울 마포구','F         ',0,'U');
+Insert into SYSTEM.YU_USER (USERID,PASSWORD,NAME,PHONE,ADDRESS,GENDER,CNT,STATUS) values ('solargiraffe25','passpass123','한서연','010-4444-5555','대전 중구','F         ',null,'U');
+Insert into SYSTEM.YU_USER (USERID,PASSWORD,NAME,PHONE,ADDRESS,GENDER,CNT,STATUS) values ('midnightzephyr78','qwerty456','장민서','010-5555-6666','경기도 안양시','M         ',0,'U');
+Insert into SYSTEM.YU_USER (USERID,PASSWORD,NAME,PHONE,ADDRESS,GENDER,CNT,STATUS) values ('galacticserenade63','hello789','최은주','010-6666-7777','부산 해운대구','F',0,'U');
+Insert into SYSTEM.YU_USER (USERID,PASSWORD,NAME,PHONE,ADDRESS,GENDER,CNT,STATUS) values ('iridescentleopard19','letmein456','이승현','010-7777-8888','서울 동대문구','M         ',0,'U');
+Insert into SYSTEM.YU_USER (USERID,PASSWORD,NAME,PHONE,ADDRESS,GENDER,CNT,STATUS) values ('velvetspectre44','secure123','박서윤','010-8888-9999','인천 서구','F         ',null,'U');
+Insert into SYSTEM.YU_USER (USERID,PASSWORD,NAME,PHONE,ADDRESS,GENDER,CNT,STATUS) values ('cosmicwombat72','mypassword456','고태영','010-9999-1111','대구 달서구','M         ',0,'U');
+Insert into SYSTEM.YU_USER (USERID,PASSWORD,NAME,PHONE,ADDRESS,GENDER,CNT,STATUS) values ('etherealcheetah31','passpass456','류미경','010-1111-2222','광주 남구','F         ',0,'U');
+Insert into SYSTEM.YU_USER (USERID,PASSWORD,NAME,PHONE,ADDRESS,GENDER,CNT,STATUS) values ('admin','admin','유지혜','010-8908-8908','인천시','F         ',0,'A');
+Insert into SYSTEM.YU_USER (USERID,PASSWORD,NAME,PHONE,ADDRESS,GENDER,CNT,STATUS) values ('d111','1111','유지','010-8908-8908','인천시','M         ',0,'U');
+Insert into SYSTEM.YU_USER (USERID,PASSWORD,NAME,PHONE,ADDRESS,GENDER,CNT,STATUS) values ('kim789','1111','김미미','010-8888-8908','서울시 강남구','F',1,'U');
+Insert into SYSTEM.YU_USER (USERID,PASSWORD,NAME,PHONE,ADDRESS,GENDER,CNT,STATUS) values ('abc','123','유지혜','010-8888-1111','서울시 강남구','F',0,'U');
+--------------------------------------------------------
+--  DDL for Index SYS_C007570
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "SYSTEM"."SYS_C007570" ON "SYSTEM"."YU_PRODUCT_NUM" ("ITEMNO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C007592
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "SYSTEM"."SYS_C007592" ON "SYSTEM"."YU_RENTAL_HISTORY" ("RENTALID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C007559
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "SYSTEM"."SYS_C007559" ON "SYSTEM"."YU_USER" ("USERID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM" ;
+--------------------------------------------------------
+--  Constraints for Table YU_PRODUCT_NUM
+--------------------------------------------------------
+
+  ALTER TABLE "SYSTEM"."YU_PRODUCT_NUM" MODIFY ("ITEMNO" NOT NULL ENABLE);
+  ALTER TABLE "SYSTEM"."YU_PRODUCT_NUM" MODIFY ("ITEM" NOT NULL ENABLE);
+  ALTER TABLE "SYSTEM"."YU_PRODUCT_NUM" ADD CONSTRAINT "SYS_C007570" PRIMARY KEY ("ITEMNO")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table YU_RENTAL_HISTORY
+--------------------------------------------------------
+
+  ALTER TABLE "SYSTEM"."YU_RENTAL_HISTORY" ADD PRIMARY KEY ("RENTALID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table YU_USER
+--------------------------------------------------------
+
+  ALTER TABLE "SYSTEM"."YU_USER" MODIFY ("PASSWORD" NOT NULL ENABLE);
+  ALTER TABLE "SYSTEM"."YU_USER" MODIFY ("NAME" NOT NULL ENABLE);
+  ALTER TABLE "SYSTEM"."YU_USER" MODIFY ("PHONE" NOT NULL ENABLE);
+  ALTER TABLE "SYSTEM"."YU_USER" MODIFY ("ADDRESS" NOT NULL ENABLE);
+  ALTER TABLE "SYSTEM"."YU_USER" MODIFY ("GENDER" NOT NULL ENABLE);
+  ALTER TABLE "SYSTEM"."YU_USER" ADD PRIMARY KEY ("USERID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSTEM"  ENABLE;

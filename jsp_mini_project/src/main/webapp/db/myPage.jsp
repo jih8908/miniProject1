@@ -123,5 +123,9 @@ function rent() {
     
     // 연장된 날짜를 알림창으로 표시
     alert("대여 날짜가 연장되었습니다. 새로운 대여 날짜: " + extendedDate);
+    
+    // Update.jsp로 연장된 날짜 정보를 전달하여 페이지 이동
+    location.href = "Update.jsp?update=" + encodeURIComponent(extendedDate);
 }
+
 </script>
