@@ -63,7 +63,7 @@
                         <input type="button" value="메뉴 페이지로 가기" onclick="goToMenuPage()">
                         <input type="button" value="정보 수정" onclick="goToEditProfile()">
 	
-                    </form>
+                    </form> 
                     <script>
                         function goToRentalUserList() {
                             location.href = "rental_userList.jsp";

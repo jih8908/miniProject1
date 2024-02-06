@@ -117,6 +117,23 @@ header img {
 	top: 10px;
 	right: 160px;
 }
+
+.rent_toy_list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0; /* 요소들 간의 기본 여백 제거 */
+    padding: 0; /* 요소들 간의 기본 여백 제거 */
+}
+
+.rent_toy_list a {
+    width: calc(33.33% - 20px); /* 3개의 요소가 한 줄에 오도록 너비 조정 */
+    text-align: center;
+    margin: 5px; /* 각 요소 주위 여백 조정 */
+    padding: 10px; /* 텍스트와 요소 경계 사이 여백 조정 */
+    line-height: 1.2; /* 텍스트의 라인 높이 조정 */
+}
+
 </style>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
